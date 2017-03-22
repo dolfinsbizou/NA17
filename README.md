@@ -194,7 +194,7 @@ La réalisation de la base de données a pour finalité la valorisation des donn
 Dans la base de données sont présent des champs, de métriques notamment, permettant d'identifier les ressources et de les rassembler pour élaborer des bilans dans la partie applicative. 
 
 ## Backlog prévisionnel
-Backlog graphique \url{https://framemo.org/NA17-P17-C}
+Backlog graphique \url{https://framemo.org/NA17-P17-C} /!\ Ancienne version
 
 Fonctions demandées par le client, en se référant aux objectifs :
 
