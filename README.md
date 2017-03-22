@@ -83,40 +83,40 @@ Le but de cette note de clarification est de reformuler le cahier des charges, e
 
 ### Contraintes à respecter
 
-### Délais
+#### Délais
 Rendu de la note de clarification : 15 mars
 Rendu du dossier d’analyse avec MCD et MLD : 22 mars
 Une première version de l'application est à rendre pour le 29 mars
 Une seconde version de l'application est à rendre pour le 5 avril
 
-### Techniques
+#### Techniques
 Le projet sera implémenté selon une architecture LAPP. 
 La livraison du projet doit être réalisée sur les serveurs de l'UV.  
 
-## Cahier des charges du client enrichi
+### Cahier des charges du client enrichi
 
-### Parcelle
+#### Parcelle
 
-#### Description
+##### Description
 Les vignes sont plantées sur des parcelles : il existe des données caractéristiques du sol (type de sol, comme de la terre argileuse), de surface d'exposition. Sur chaque parcelle est plantée un et un seul cépage. Un cépage peut être planté sur plusieurs parcelles. Une parcelle peut exister pendant un temps défini et peut ne pas être utilisée (en cas de plantation ou d'arrachage).
 
-#### Données à enregistrer
+##### Données à enregistrer
 
    * Type de sol
    * Exposition
    * Taille de la parcelle
    * État de la parcelle (la parcelle est elle en cours d'utilisation)
    * Cépage utilisé
-#### Remarques
+##### Remarques
 
    * Une parcelle ne peut contenir qu'au maximum un seul cépage.
    * Un cépage peut être présent sur plusieurs parcelles.
-### Vins
+#### Vins
 
-#### Description
+##### Description
 Chaque année, plusieurs vins sont assemblés à partir de différents cépages provenant des parcelles, dans des proportions qui dépendent du choix de l'exploitant. Chaque vin est analysé et dégusté, des critères qualitatifs sont caractéristiques des vins. Chaque vin est vendu dans différents circuits de vente (direct, grossiste, détaillant...). Les chiffres de vente et les prix sont connus.
 
-#### Données à enregistrer
+##### Données à enregistrer
 
    * Caractéristiques du vin - qualité
        * Acidité
@@ -129,32 +129,32 @@ Chaque année, plusieurs vins sont assemblés à partir de différents cépages 
        * vente au détail
    * Prix
    * Chiffre de ventes (volume de ventes, à définir en litres ou en contenant spécifique (bouteille, caisse))
-#### Remarques
+##### Remarques
 
    * L'assemblage dépend du choix de l'exploitant.
    * Un vin donné peut être vendu dans plusieurs circuits.
    * Pour des raisons de simplification, il semble pertinent de considérer le volume produit, en litres, et d'attribuer un prix au litre
-### Évènements climatiques
+#### Évènements climatiques
 
-#### Description
+##### Description
 Chaque année les conditions climatiques changent, et plusieurs évènements (grêle, sécheresse, etc.) peuvent avoir lieu. Un évènement climatique peut toucher toutes les parcelles, ou un sous-ensemble de parcelles. Il peut toucher chaque parcelle avec une intensité différente.
 
-#### Données à enregistrer
+##### Données à enregistrer
 
    * Type d'évènement
    * Intensité
    * Parcelle(s) touchée(s)
    * Date
-#### Remarques
+##### Remarques
 
    * Chaque parcelle pourra traiter indépendamment les évènements climatiques.
    * Un évènement climatique touche au minimum une parcelle et de façon atomique (son impact est considéré sur la totalité de la parcelle)
-### Modes de culture
+#### Modes de culture
 
-#### Description
+##### Description
 Certaines parcelles sont désherbées en plein, enherbées et tondues, ou cultivées. Le mode de gestion du sol peut changer à chaque année. Différents modes de taille sont utilisés sur les différentes parcelles, ceux-ci peuvent varier en fonction des années. Différents traitements phytosanitaires sont effectués, chaque année, sur tout ou partie des parcelles.
 
-#### Données à enregistrer
+##### Données à enregistrer
 
    * Type d'entretien
        * désherbée en plein
@@ -163,7 +163,7 @@ Certaines parcelles sont désherbées en plein, enherbées et tondues, ou cultiv
    * Mode de taille
    * Traitement(s) appliqué(s)
 
-### Objectifs
+#### Objectifs
 
 La réalisation de la base de données a pour finalité la valorisation des données et l'obtention de résultats nécessaires à la gestion et à la prise de décision au sein de l'exploitation selon 3 axes.
 
