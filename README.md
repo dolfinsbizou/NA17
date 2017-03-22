@@ -26,6 +26,12 @@ Vente(#numero_vente: unsigned int, quantite: unsigned int, prix_unit: unsigned i
 Distributeur(#nom: string, marge: real, type => TypeDistributeur)
 TypeDistributeur(#nom: string, description: text)
 ```
+
+## Contraintes d'intégrité
+
+* La somme des proportions pour un vin donné (dans la table Constitue) doit être égale à 1.
+* La somme des quantités vendues pour un vin est au plus égale à la quantité disponible de ce vin.
+
 ## Notes de clarification
 
 ### Contexte
