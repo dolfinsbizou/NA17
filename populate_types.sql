@@ -5,11 +5,11 @@ INSERT INTO TypeSol (nom, description) VALUES
 ;
 
 INSERT INTO TypeModeTaille (nom, description) VALUES
-('Gobelet', '4 à 5 coursons à deux yeux, sur 3 à 5 bras'.),
-('Cordon de Royat', '1 ou 2 bras horizontaux, avec 4 à 6 courson à 2 yeux.'),
-('Taille chablis', 'Taille mixte en éventail.'),
-('Guyot','Avec un courson à deux yeux et, un peu plus haut, une baguette à six yeux environ.'),
-('Sylvoz','Taille longue sur une charpente longue (cordon).')
+('gobelet', '4 à 5 coursons à deux yeux, sur 3 à 5 bras.'),
+('cordon de Royat', '1 ou 2 bras horizontaux, avec 4 à 6 courson à 2 yeux.'),
+('taille chablis', 'Taille mixte en éventail.'),
+('guyot','Avec un courson à deux yeux et, un peu plus haut, une baguette à six yeux environ.'),
+('sylvoz','Taille longue sur une charpente longue (cordon).')
 ;
 
 INSERT INTO TypeModeCulture (nom, description) VALUES
@@ -31,10 +31,10 @@ INSERT INTO TypeEvenementClimatique (nom, description) VALUES
 INSERT INTO TypeRobe (nom, description) VALUES
 ('rouge vif un peu violacé', 'Il s’agit d’un vin jeune.'),
 ('rouge cerise', 'Le vin est en pleine évolution, il n’a pas encore atteint sa maturité mais peut être consommé.'),
-('rouge avec des nuances orangées', 'Le vin est à boire ; s’il s’agit d’un vin de garde, il commence son évolution.'),
+('rouge nuances orangées', 'Le vin est à boire ; s’il s’agit d’un vin de garde, il commence son évolution.'),
 ('rouge brun à brique', 'Il est temps de le boire.'),
-('jaune pâle, presque transparent', 'Le vin est très jeune.'),
-('jaune avec des reflets un peu verts', 'Le vin n’a pas encore évolué.'),
+('jaune pâle transparent', 'Le vin est très jeune.'),
+('jaune reflets verts', 'Le vin n’a pas encore évolué.'),
 ('jaune paille', 'C‘est un vin à bonne maturité.'),
 ('jaune d’or cuivré', 'S’il s’agit d’un vin sec, il est bien évolué. S’il s’agit d’un vin liquoreux, il est à maturité.'),
 ('jaune brun', 'C’est un vin oxydé.'),
