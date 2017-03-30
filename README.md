@@ -3,7 +3,7 @@ Projet : Exploitation Viticole.
 
 ## MCD
 
-![UML](https://raw.githubusercontent.com/dolfinsbizou/NA17/master/UML.png)
+![UML](https://raw.githubusercontent.com/dolfinsbizou/NA17/master/uml/uml.png)
 
 ## MLD
 
