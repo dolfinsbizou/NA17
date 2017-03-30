@@ -72,5 +72,8 @@ INSERT INTO Distributeur (nom, marge, type) VALUES
 ('Coraply', 0.16, 'grande distribution')
 ;
 
-INSERT INTO Vente (quantite, prix_unit, prix_total, appellation_vin, annee_vin, nom_distributeur) VALUES
-
+INSERT INTO Vente (numero_vente, quantite, prix_unit, prix_total, appellation_vin, annee_vin, nom_distributeur) VALUES
+(1, 8, 10, 80, 'Côte du fleuve', 2010, 'direct'),
+(2, 120, 12.6, 1512, 'Champétillant', 2011, 'Distrivin')
+;
+;
