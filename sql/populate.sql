@@ -32,7 +32,7 @@ INSERT INTO Recolte (annee, id_parcelle, nom_cepage, mode_culture, mode_taille, 
 INSERT INTO TraitementPhytosanitaire (nom, description) VALUES
 ('insectator', 'Produit insecticide efficace'),
 ('champignator', 'Produit anti champignons'),
-('désherbator', 'Produit désherbant')
+('désherbator', 'Produit désherbant'),
 ('ferrisator', 'Traitement des carences en fer')
 ;
 
