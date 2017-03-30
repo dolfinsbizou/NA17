@@ -1,0 +1,17 @@
+DELETE FROM AppliqueA;
+DELETE FROM Constitue;
+DELETE FROM Touche;
+DELETE FROM Vente;
+DELETE FROM Vin;
+DELETE FROM Recolte;
+DELETE FROM Parcelle;
+DELETE FROM Distributeur;
+DELETE FROM TypeDistributeur;
+DELETE FROM EvenementClimatique;
+DELETE FROM TypeEvenementClimatique;
+DELETE FROM TypeModeCulture;
+DELETE FROM TypeModeTaille;
+DELETE FROM TypeRobe;
+DELETE FROM TypeSol;
+DELETE FROM Cepage;
+DELETE FROM TraitementPhytosanitaire;
