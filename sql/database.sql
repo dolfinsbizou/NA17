@@ -44,7 +44,6 @@ CREATE TABLE TypeEvenementClimatique (
 CREATE TABLE EvenementClimatique (
 	type VARCHAR(30) REFERENCES TypeEvenementClimatique(nom),
 	date_evenement DATE,
-	intensite INT CHECK(intensite BETWEEN 0 AND 10),
 	
 	PRIMARY KEY(type, date_evenement)
 );
