@@ -4,7 +4,7 @@ CREATE TABLE TypeSol (
 );
 
 CREATE TABLE Parcelle (
-	id SERIAL PRIMARY KEY NOT NULL,
+	id INTEGER PRIMARY KEY NOT NULL,
 	sol VARCHAR(30) REFERENCES TypeSol(nom),
 	exposition INTEGER CHECK(exposition BETWEEN 0 AND 2),
 	superficie DECIMAL CHECK(superficie > 0)
@@ -118,7 +118,7 @@ CREATE TABLE Distributeur (
 );
 
 CREATE TABLE Vente (
-	numero_vente SERIAL PRIMARY KEY NOT NULL,
+	numero_vente INTEGER PRIMARY KEY CHECK(numero_vente > 0),
 	quantite INTEGER CHECK(quantite > 0),
 	prix_unit MONEY NOT NULL,
 	prix_total MONEY NOT NULL,
