@@ -31,8 +31,8 @@ INSERT INTO EvenementClimatique (type, date_evenement, intensite) VALUES
 ;
 
 INSERT INTO Touche (annee_recolte, id_parcelle_recolte, type_evenement, date_evenement, degats) VALUES
-(2010, 1, 'inondation', '2010-12-12', 3),
-(2010, 2, 'inondation', '2010-12-12', 8),
+(2010, 1, 'innondation', '2010-12-12', 3),
+(2010, 2, 'innondation', '2010-12-12', 8),
 (2011, 3, 'orage', '2011-05-20', 1)
 ;
 
@@ -48,10 +48,10 @@ INSERT INTO AppliqueA (annee_recolte, id_parcelle_recolte, nom_traitement_phytos
 ;
 
 INSERT INTO Vin (appellation, annee, acidite, robe, petillant, prix_base, qualite, quantite_dispo) VALUES
-('Côte du fleuve', 2010, 4, 'rouge brun à brique', no, 10, 16, 200),
-('Château les Ancêtres', 2011, 7, 'jaune brun', no, 8, 13, 300),
-('Champétillant', 2011, 5, 'rose saumoné', yes, 12, 19, 250),
-('Pinot rosé', 2010, 3, 'rose orangé', no, 15, 17, 400),
+('Côte du fleuve', 2010, 4, 'rouge brun à brique', false, 10, 16, 200),
+('Château les Ancêtres', 2011, 7, 'jaune brun', false, 8, 13, 300),
+('Champétillant', 2011, 5, 'rose saumoné', true, 12, 19, 250),
+('Pinot rosé', 2010, 3, 'rose orangé', false, 15, 17, 400)
 ;
 
 INSERT INTO Constitue (annee_recolte, id_parcelle_recolte, appellation_vin, annee_vin, proportion) VALUES
@@ -75,5 +75,4 @@ INSERT INTO Distributeur (nom, marge, type) VALUES
 INSERT INTO Vente (numero_vente, quantite, prix_unit, prix_total, appellation_vin, annee_vin, nom_distributeur) VALUES
 (1, 8, 10, 80, 'Côte du fleuve', 2010, 'direct'),
 (2, 120, 12.6, 1512, 'Champétillant', 2011, 'Distrivin')
-;
 ;
