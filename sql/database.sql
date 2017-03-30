@@ -118,7 +118,7 @@ CREATE TABLE Distributeur (
 );
 
 CREATE TABLE Vente (
-	numero_vente INTEGER PRIMARY KEY CHECK(numero > 0),
+	numero_vente INTEGER PRIMARY KEY CHECK(numero_vente > 0),
 	quantite INTEGER CHECK(quantite > 0),
 	prix_unit MONEY NOT NULL,
 	prix_total MONEY NOT NULL,
