@@ -79,9 +79,9 @@ INSERT INTO Recolte (annee, id_parcelle, nom_cepage, mode_culture, mode_taille, 
 (2011, 3, 'merlot', 'conventionnelle', 'guyot', 200)
 ;
 
-INSERT INTO EvenementClimatique (type, date_evenement, intensite) VALUES
-('innondation', '2010-12-12', 6),
-('orage', '2011-05-20', 9)
+INSERT INTO EvenementClimatique (type, date_evenement) VALUES
+('innondation', '2010-12-12'),
+('orage', '2011-05-20')
 ;
 
 INSERT INTO Touche (annee_recolte, id_parcelle_recolte, type_evenement, date_evenement, degats) VALUES
