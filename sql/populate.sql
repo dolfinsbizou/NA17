@@ -1,12 +1,12 @@
-INSERT INTO Parcelle (sol, superficie) VALUES 
-('siliceux', 200),
-('siliceux', 300),
-('argileux', 200),
-('calcaires', 100),
-('calcaires', 400),
-('calcaires', 150),
-('argileux', 300),
-('argileux', 250)
+INSERT INTO Parcelle (id, sol, superficie) VALUES 
+(1, 'siliceux', 200),
+(2, 'siliceux', 300),
+(3, 'argileux', 200),
+(4, 'calcaires', 100),
+(5, 'calcaires', 400),
+(6, 'calcaires', 150),
+(7, 'argileux', 300),
+(8, 'argileux', 250)
 ;
 
 INSERT INTO Cepage (nom, description) VALUES
