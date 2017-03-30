@@ -31,7 +31,7 @@ INSERT INTO Cepage (nom, description) VALUES
 ;
 
 INSERT INTO Vin (appellation, annee, acidite, robe, petillant, prix_base, qualite, quantite_dispo) VALUES
-('Côte du fleuve', 2010, 4, 'rouge brun à brique', no, 10, 16, 200)
+('Côte du fleuve', 2010, 4, 'rouge brun à brique', no, 10, 16, 200),
 ('Château les Ancêtres', 2011, 7, 'jaune brun', no, 8, 13, 300),
 ('Champétillant', 2012, 5, 'rose saumoné', yes, 12, 19, 250)
 ;
@@ -43,7 +43,7 @@ INSERT INTO Distributeur (nom, marge, type) VALUES
 ('La Cavavin', 0.1, 'commerce de détail'),
 ('Distrivin', 0.05, 'commerce de gros'),
 ('Mon vin en Ligne', 0.08, 'e-commerce'),
-('Carrauchan', 0.15, 'grande distribution');
+('Carrauchan', 0.15, 'grande distribution'),
 ('Catalogue du vin', 0.09, 'vente par correspondance'),
 ('Coraply', 0.16, 'grande distribution')
 ;
