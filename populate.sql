@@ -2,7 +2,11 @@ INSERT INTO Parcelle (sol, superficie) VALUES
 ('siliceux', 200),
 ('siliceux', 300),
 ('argileux', 200),
-('calcaires', 100)
+('calcaires', 100),
+('calcaires', 400),
+('calcaires' 150),
+('argileux', 300),
+('argileux', 250)
 ;
 
 --INSERT INTO Recolte (annee, id_parcelle, nom_cepage, mode_culture, mode_taille, qte_produite) VALUES
@@ -15,9 +19,11 @@ INSERT INTO TraitementPhytosanitaire (nom, description) VALUES
 ('insectator', 'Produit insecticide efficace'),
 ('champignator', 'Produit anti champignons'),
 ('désherbator', 'Produit désherbant')
+('ferrisator', 'Traitement des carences en fer')
 ;
 
 --INSERT INTO AppliqueA (annee_recolte, id_parcelle_recolte, nom_traitement_phytosanitaire, nb_applications) VALUES
+-- annee_recolte shoud be handled at application level
 
 INSERT INTO Cepage (nom, description) VALUES
 ('carignan', 'noir'),
