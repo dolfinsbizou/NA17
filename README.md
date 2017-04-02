@@ -1,6 +1,15 @@
 # NA17
 Projet : Exploitation Viticole.
 
+## Installation
+
+```
+cd path/to/your/web/root # Merci de l'installer à la racine de votre dossier web
+git clone https://github.com/dolfinsbizou/NA17.git
+cp model/db_info.php_example model/db_info.php
+vim model/db_info.php # Ou votre éditeur de texte, même si vous n'avez aucun respect en utilisant nano ou emacs
+# Remplissez db_info.php avec les informations de connexion à la base de données, puis sauvegardez et quittez
+
 ## MCD
 
 ![UML](https://raw.githubusercontent.com/dolfinsbizou/NA17/master/uml/uml.png)
