@@ -2,6 +2,9 @@
 
 require_once('db.php');
 
+/*! \brief Fetches the full table Parcelle.
+ *  \return Query result.
+ */
 function Parcelle_get_all()
 {
 	global $db;
