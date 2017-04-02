@@ -18,14 +18,14 @@ function display_results($fetch, $col_names=null, $col_ommitted=null, $null_mess
 	}
 	
 	echo '<table class="generated-table' . ($extra_class?(' ' . $extra_class):'') . '">';
-	
+
 	echo "<tr>";
-	foreach($col_names as $key => &$col_name)
+	foreach($fetch[0] as $key => &$value)
 	{
 		if(!in_array($key, $col_ommitted))
 		{
 			echo "<th>";
-			echo $col_name;
+			echo $col_names[$key];
 			echo "</th>";
 		}		
 	}

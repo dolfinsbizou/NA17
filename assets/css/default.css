@@ -84,12 +84,17 @@ nav h2
 	background: lightgrey;
 }
 
+#main th, td
+{
+	min-width: 80px;
+	max-width: 300px;
+}
+
 #main table, th, td
 {
 	border: 1px solid black;
 	padding: 5px;
 	text-align: left;
-	min-width: 80px;
 }
 
 #main table .table-empty-cell
