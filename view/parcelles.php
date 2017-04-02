@@ -4,8 +4,9 @@
 <body>
 	<?php require_once("include/nav.php"); ?>
 	<div id="main">
-		<h1>Accueil</h1>
-		<p>Naviguez avec les liens ci-contre.</p>
+		<h1>Parcelles</h1>
+		<?= $joinLink ?>
+		<?php display_results($parcelles, $parcelles_col_names); ?>
 	</div>
 </body>
 </html>

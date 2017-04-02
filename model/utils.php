@@ -6,8 +6,9 @@
  *  \param $col_ommitted If you want to ommit some columns, give their original name in an array.
  *  \param $null_message Fallback to display if a cell has no value. Must be escaped.
  *  \param $extra_class Extra class(es) to give to the table element.
+ *  \param $actions If true, will display Update and Delete actions.
  */
-function display_results($fetch, $col_names=null, $col_ommitted=null, $null_message="NA", $extra_class=null)
+function display_results($fetch, $col_names=null, $actions=true, $col_ommitted=null, $null_message="NA", $extra_class=null)
 {
 	if(!$col_ommitted) $col_ommitted = Array();
 	
@@ -29,6 +30,10 @@ function display_results($fetch, $col_names=null, $col_ommitted=null, $null_mess
 			echo "</th>";
 		}		
 	}
+	if($actions)
+	{
+		echo "<th>Actions</th>";
+	}
 	echo "</tr>";
 
 	foreach($fetch as &$data)
@@ -43,8 +48,18 @@ function display_results($fetch, $col_names=null, $col_ommitted=null, $null_mess
 				echo "</td>";
 			}
 		}
+		if($actions)
+		{
+			echo "<td class=\"table-actions-cell\">";
+			echo '<a href="#" title="Éditer" class="table-edit-action">&#xE904;</a> <a href="#" title="Supprimer" class="table-delete-action">&#xEA0B;</a>';
+			echo "</td>";
+		}
 		echo "</tr>";
 	}
 
 	echo "</table>";
+	if($actions)
+	{
+		echo '<a href="#" title="Ajouter" class="add-link">&#xEA0A;</a><br />';
+	}
 }
