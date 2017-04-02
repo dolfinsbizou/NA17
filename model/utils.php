@@ -9,6 +9,8 @@
  */
 function display_results($fetch, $col_names=null, $col_ommitted=null, $null_message="NA", $extra_class=null)
 {
+	if(!$col_ommitted) $col_ommitted = Array();
+	
 	foreach($fetch[0] as $key => &$value)
 	{
 		if(!isset($col_names[$key]))

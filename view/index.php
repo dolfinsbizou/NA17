@@ -6,7 +6,7 @@
 	<div id="main">
 		<h1>Démo</h1>
 		<p>Ceci est un exercice. </p>
-		<?php display_results($parcelles, $parcelles_col_names, Array("exposition")); ?>
+		<?php display_results($parcelles, $parcelles_col_names); ?>
 	</div>
 </body>
 </html>

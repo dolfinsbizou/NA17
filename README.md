@@ -9,6 +9,7 @@ git clone https://github.com/dolfinsbizou/NA17.git
 cp model/db_info.php_example model/db_info.php
 vim model/db_info.php # Ou votre éditeur de texte, même si vous n'avez aucun respect en utilisant nano ou emacs
 # Remplissez db_info.php avec les informations de connexion à la base de données, puis sauvegardez et quittez
+```
 
 ## MCD
 
