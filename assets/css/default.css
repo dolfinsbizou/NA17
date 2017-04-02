@@ -1,0 +1,61 @@
+/* global */
+
+html, body
+{
+	height: 100%;
+	margin: 0px;
+	font-family: serif;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: sans-serif;
+}
+
+/* nav */
+
+nav
+{
+	width: 18%;
+	padding: 1%;
+	height: 100%;
+	position: fixed;
+	border-right: 2px ridge;
+	background: white;
+	z-index: 1;
+}
+
+nav h1
+{
+	font-weight: bold;
+	font-size: 3.5em;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+nav h2
+{
+	text-align: center;
+}
+
+#nav-list
+{
+	list-style-type: circle;
+	margin-left: 20px;
+}
+
+#nav-list li
+{
+	margin-top: 15px;
+}
+
+/* main */
+
+#main
+{
+	width: 78%;
+	padding: 1%;
+	height: auto;
+	position: absolute;
+	right: 0px;
+}
