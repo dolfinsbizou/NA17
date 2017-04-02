@@ -5,7 +5,8 @@
 	<?php require_once("include/nav.php"); ?>
 	<div id="main">
 		<h3>Démo</h3>
-		<p>Ceci est un exercice.</p>
+		<p>Ceci est un exercice. </p>
+		<pre><?php print_r($parcelles); ?></pre>
 	</div>
 </body>
 </html>
