@@ -27,7 +27,7 @@ Array
 
 try
 {
-	$db = new PDO($db_info['driver'] . ':host=' . $db_info['host'] . ';dbname=' . $db_info['base']/* . ';charset=utf8'*/, $db_info['user'], $db_info['password']);
+	$db = new PDO($db_info['driver'] . ':host=' . $db_info['host'] . ';port=' . $db_info['port'] . ';dbname=' . $db_info['base']/* . ';charset=utf8'*/, $db_info['user'], $db_info['password']);
 }
 catch(Exception $e)
 {

@@ -6,7 +6,7 @@
 	<div id="main">
 		<h1>Parcelles</h1>
 		<?= $joinLink ?>
-		<?php display_results($parcelles, $parcelles_col_names); ?>
+		<?php fancy_table($parcelles, $parcelles_col_names, $parcelles_primary_key, $parcelles_prefix); ?>
 	</div>
 </body>
 </html>

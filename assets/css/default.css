@@ -92,7 +92,7 @@ nav h2
 
 #main .add-link
 {
-	font-family: icon;
+	font-family: 'icon'; !important
 	color: darkgreen;
 	text-decoration: none;
 }
@@ -151,6 +151,19 @@ nav h2
 #main table .table-edit-action
 {
 	color: orange;
+}
+
+#main table .table-primary-key-cell
+{
+	font-weight: bold;
+}
+
+#main table .table-primary-key-symbol
+{
+	font-family: 'icon'; !important
+	font-weight: #AAAA00;
+	color: yellow;
+	margin-right: 2px;
 }
 
 @font-face
