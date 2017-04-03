@@ -79,6 +79,32 @@ nav h2
 	margin-bottom: 0.2em;
 }
 
+#main h3
+{
+	font-size: 1.5em;
+	font-weight: normal;
+	font-style: italic;
+	margin-bottom: 0.1em;
+}
+
+#main p
+{
+	line-height: 1.1em;
+}
+
+#main pre
+{
+	line-height: 1.1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+	width: 500px;
+	background: #DDDDDD;
+	word-wrap: break-word; /* IE5/6/7 support */
+	white-space: pre-wrap;
+	font-family: 'code';
+}
+
 #main a
 {
 	color: #454545;
@@ -92,14 +118,14 @@ nav h2
 
 #main .add-link
 {
-	font-family: 'icon'; !important
-	color: darkgreen;
+	color: #00C000;
 	text-decoration: none;
+	font-family: 'icon'; !important
 }
 
 #main .add-link:hover
 {
-	color: #004000;
+	color: #00A000;
 }
 
 #main table
@@ -134,8 +160,9 @@ nav h2
 
 #main table .table-actions-cell
 {
-	font-family: 'icon'; !important
 	text-align: center;
+	vertical-align: middle;
+	font-family: 'icon'; !important
 }
 
 #main table .table-actions-cell a
@@ -160,16 +187,22 @@ nav h2
 
 #main table .table-primary-key-symbol
 {
-	font-family: 'icon'; !important
-	font-weight: #AAAA00;
-	color: yellow;
+	font-weight: normal;
+	color: #FFDF00;
 	margin-right: 2px;
+	font-family: 'icon'; !important
 }
 
 @font-face
 {
 	font-family: 'title';
 	src: url('../fonts/istok.ttf') format('truetype');
+}
+
+@font-face
+{
+	font-family: 'code';
+	src: url('../fonts/sourcecode.otf');
 }
 
 @font-face

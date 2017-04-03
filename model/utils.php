@@ -15,6 +15,7 @@ function fancy_table($fetch, $col_names=null, $primary_key=null, $actions_prefix
 	if(!$col_ommitted) $col_ommitted = Array();
 	if(!$primary_key) $primary_key = Array();
 	if(!$actions_prefix || $primary_key == null) $actions = false;
+	if(!is_array($fetch[key($fetch)])) $fetch = Array($fetch);
 
 	foreach($fetch[0] as $key => &$value)
 	{
@@ -59,7 +60,7 @@ function fancy_table($fetch, $col_names=null, $primary_key=null, $actions_prefix
 			foreach($primary_key as $cell)
 			{
 				if(strlen($get_string) !== 1) $get_string.= '&';
-				$get_string.= $cell . '=' . $data[$cell];
+				$get_string.= $cell . '=' . rawurlencode($data[$cell]);
 			}
 
 			echo "<td class=\"table-actions-cell\">";

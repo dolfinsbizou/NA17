@@ -4,10 +4,8 @@
 <body>
 	<?php require_once("include/nav.php"); ?>
 	<div id="main">
-		<h1>Statistiques</h1>
-		<h2>Données de production</h2>
-		<h3>Comptages</h3>
-		<?php fancy_table($stats, $stats_col_names); ?>
+		<h1><?= $page_title ?></h1>
+		<?php fancy_table($cepages, $cepages_col_names, $cepages_primary_key, $cepages_prefix); ?>
 	</div>
 </body>
 </html>

@@ -14,3 +14,18 @@ function Parcelle_get_all($join=false)
 
 	return $req->fetchAll(PDO::FETCH_ASSOC);
 }
+
+/*! \brief Deletes an entry.
+ *  \param $key Primary key of the entry to delete.
+ *  \return Error informations.
+ */
+function Parcelle_delete_entry($key)
+{
+	global $db;
+
+	$req = $db->prepare('DELETE FROM Parcelle WHERE id = ?');
+
+	$req->execute(array($key));
+
+	return $db->errorInfo();
+}

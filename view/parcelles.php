@@ -4,7 +4,7 @@
 <body>
 	<?php require_once("include/nav.php"); ?>
 	<div id="main">
-		<h1>Parcelles</h1>
+		<h1><?= $page_title ?></h1>
 		<?= $joinLink ?>
 		<?php fancy_table($parcelles, $parcelles_col_names, $parcelles_primary_key, $parcelles_prefix); ?>
 	</div>
