@@ -27,5 +27,5 @@ function Parcelle_delete_entry($key)
 
 	$req->execute(array($key));
 
-	return $db->errorInfo();
+	return $req->errorInfo();
 }
