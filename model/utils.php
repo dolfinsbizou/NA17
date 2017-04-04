@@ -129,10 +129,21 @@ function fancy_form($fields, $target)
 		switch($field->f_type)
 		{
 		case 'textarea':
-			echo '<label for="' . $field->f_name . '">' . $field->f_label . '</label><textarea id="' . $field->f_name . '" name="' . $field->f_name . '" placeholder="' . $field->f_placeholder . '" ' . ($field->f_locked?'disabled':'') . ' ' . ($field->f_required?'required':'') . '>' . $field->f_content . '</textarea>';
+			echo '<label for="' . $field->f_name . '">' . $field->f_label . '</label><textarea id="' . $field->f_name . '" name="' . $field->f_name . '" placeholder="' . $field->f_placeholder . '" ' . ($field->f_locked?'readonly':'') . ' ' . ($field->f_required?'required':'') . '>' . $field->f_content . '</textarea>';
+			break;
+		case 'select':
+			if(!is_array($field->f_extras)) $field->f_extras = Array();
+
+			echo '<label for="' . $field->f_name . '"' . ($field->f_locked?' readonly':'') . '>' . $field->f_label . '</label>';
+			echo '<select id="' . $field->f_name . '" name="' . $field->f_name . '">';
+			foreach($field->f_extras as &$option)
+			{
+				echo '<option value="' . $option . '" ' . (($option==$field->f_content)?'selected':'') . '>' . $option . '</option>';
+			}
+			echo '</select>';
 			break;
 		default:
-			echo '<label for="' . $field->f_name . '">' . $field->f_label . '</label><input type="' . $field->f_type . '" id="' . $field->f_name . '" name="' . $field->f_name . '" placeholder="' . $field->f_placeholder . '" ' . ($field->f_locked?'disabled':'') . ' ' . ($field->f_required?'required':'') . ' value="' . $field->f_content . '" />';
+			echo '<label for="' . $field->f_name . '">' . $field->f_label . '</label><input type="' . $field->f_type . '" id="' . $field->f_name . '" name="' . $field->f_name . '" placeholder="' . $field->f_placeholder . '" ' . ($field->f_locked?'readonly':'') . ' ' . ($field->f_required?'required':'') . ' value="' . $field->f_content . '" />';
 			break;
 		}
 		echo '<br />';

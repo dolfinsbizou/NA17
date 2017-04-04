@@ -17,9 +17,7 @@ if(isset($_GET['nom']))
 	else
 	{
 		foreach($cepage as &$field)
-		{
 			$field = htmlspecialchars($field);
-		}
 
 		$page_title = "Édition du cépage " . $cepage['nom'];
 	}
@@ -37,4 +35,4 @@ $fields[1] = new FormField("Description", "Couleur, saveur, origine...", "descri
 
 $target = 'cepage-editer-valider.php' . ($cepage?'':'?add');
 
-require_once("view/cepages-editer.php");
+require_once("view/cepage-editer.php");

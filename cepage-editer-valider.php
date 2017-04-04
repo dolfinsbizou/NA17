@@ -11,6 +11,7 @@ if(empty($_POST['nom']))
 {
 	// The user shouldn't be able to send a form without this field (required or locked attribute). But they can make a custom GET request and send it, bypassing the HTML verification. Never trust user input.
 	header('Location: ./cepages.php');
+	exit(0);
 }
 
 if(!isset($_GET['add']))

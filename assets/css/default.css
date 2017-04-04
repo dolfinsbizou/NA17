@@ -214,7 +214,7 @@ nav h2
 	font-weight: bold;
 }
 
-#main input
+#main input, #main select, #main textarea
 {
 	width: 25%;
 	margin-bottom: 0.6em;
@@ -223,11 +223,13 @@ nav h2
 
 #main textarea
 {
-	width: 25%;
 	padding: 0.5em;
-	margin-bottom: 0.6em;
-	font-family: 'corps';
 	resize: none;
+}
+
+#main select
+{
+	width: 26%;
 }
 
 #main input[type="submit"]

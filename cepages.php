@@ -18,7 +18,7 @@ $cepages_col_names = Array(
 
 $cepages_primary_key = Array('nom');
 
-$cepages_prefix = "cepages";
+$cepages_prefix = "cepage";
 
 $page_title = "Cépages";
 require_once("view/cepages.php");

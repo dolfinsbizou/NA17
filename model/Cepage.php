@@ -37,7 +37,7 @@ function Cepage_get_entry($key)
 {
 	global $db;
 
-	$req = $db->prepare('SELECT * FROM Cepage WHERE nom = ?');
+	$req = $db->prepare('SELECT * FROM Cepage WHERE nom = ? ORDER BY nom');
 
 	$req->execute(array($key));
 

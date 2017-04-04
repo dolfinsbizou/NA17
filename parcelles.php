@@ -24,7 +24,7 @@ $parcelles_primary_key = Array('id');
 
 $parcelles_foreign_keys = Array('sol' => 'types-de-sol');
 
-$parcelles_prefix = "parcelles";
+$parcelles_prefix = "parcelle";
 
 $joinLink = '<a href="parcelles.php' . (isset($_GET['join'])?'':'?join') . '"> ' . (isset($_GET['join'])?'Sans':'Avec') . ' jointure' . (isset($_GET['join'])?'':'s') . '</a>';
 
