@@ -1,7 +1,7 @@
 <?php
 require_once("model/auth.php");
 require_once("model/Parcelle.php");
-require_once("model/TypeSol.php");
+require_once("model/Type.php");
 require_once("model/utils.php");
 
 if(isset($_GET['id']))
@@ -29,7 +29,7 @@ else
 	$page_title = "Nouvelle parcelle";
 }
 
-$sols = TypeSol_get_all(true);
+$sols = Type_get_all('TypeSol', true);
 
 if(!is_array($sols)) $sols = Array();
 

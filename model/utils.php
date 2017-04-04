@@ -4,7 +4,7 @@
  *  \param $fetch Data to display. Must be escaped.
  *  \param $col_names If you want to change the names of some or all the columns, give an array associating a key as the original value to the new name of the column. Must be escaped.
  *  \param $primary_key Must be set if $actions == true (otherwise will force $actions to false), an array containing the original column names which are the primary key.
- *  \param $foreign_keys Foreign keys in the table. Must be an associative array with the key being the name of the column, and the value the php page prefix (prefix.php).
+ *  \param $foreign_keys Foreign keys in the table. Must be an associative array with the key being the name of the column, and the value the php page).
  *  \param $actions_prefix Must be set if $actions == true (otherwise will force $actions to false), determines the prefix of the pages for actions links. (prefix-editer.php, prefix-supprimer.php) 
  *  \param $actions If true, will display Update and Delete actions.
  *  \param $col_ommitted If you want to ommit some columns, give their original name in an array.
@@ -34,7 +34,7 @@ function fancy_table($fetch, $col_names=null, $primary_key=null, $foreign_keys=n
 		{
 			echo "<th>";
 			if(in_array($key, $primary_key)) echo '<span class="table-primary-key-symbol">&#xE98D;</span>';
-			if(array_key_exists($key, $foreign_keys)) echo '<span class="table-foreign-key-symbol">&#xE98D;</span><a href="'. $foreign_keys[$key] . '.php">';
+			if(array_key_exists($key, $foreign_keys)) echo '<span class="table-foreign-key-symbol">&#xE98D;</span><a href="'. $foreign_keys[$key] . '">';
 			echo $col_names[$key];
 			if(array_key_exists($key, $foreign_keys)) echo '</a>';
 			echo "</th>";
@@ -53,8 +53,9 @@ function fancy_table($fetch, $col_names=null, $primary_key=null, $foreign_keys=n
 		{
 			if(!in_array($key, $col_ommitted))
 			{
-				echo '<td class="' . (($value === null)?' table-empty-cell':'') . (in_array($key, $primary_key)?'table-primary-key-cell':'') . '">';
-				echo ($value === null)?$null_message:$value;
+				$empty_cell = (empty($value)&&(!($value === 0))&&(!($value === '0')));
+				echo '<td class="' . ($empty_cell?' table-empty-cell':'') . (in_array($key, $primary_key)?'table-primary-key-cell':'') . '">';
+				echo $empty_cell?$null_message:$value;
 				echo "</td>";
 			}
 		}

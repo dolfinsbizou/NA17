@@ -22,7 +22,7 @@ $parcelles_col_names = Array(
 
 $parcelles_primary_key = Array('id');
 
-$parcelles_foreign_keys = Array('sol' => 'types-de-sol');
+$parcelles_foreign_keys = Array('sol' => 'types.php#TypeSol');
 
 $parcelles_prefix = "parcelle";
 
