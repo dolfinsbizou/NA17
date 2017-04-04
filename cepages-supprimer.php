@@ -15,6 +15,7 @@ $errorInfo = Cepage_delete_entry($cepage_key);
 if(!empty($errorInfo[2]))
 {
 	$driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
+	$cepage_key = htmlspecialchars($cepage_key);
 	$page_title = 'Le cépage' . $cepage_key . ' n\'a pas été supprimé';
 	require_once("view/suppression-erreur.php");
 }

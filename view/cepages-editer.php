@@ -5,7 +5,7 @@
 	<?php require_once("include/nav.php"); ?>
 	<div id="main">
 		<h1><?= $page_title ?></h1>
-		<?php fancy_table($cepages, $cepages_col_names, $cepages_primary_key, null, $cepages_prefix); ?>
+		<?php fancy_form($fields, $target);?>
 	</div>
 </body>
 </html>

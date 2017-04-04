@@ -8,7 +8,7 @@ $cepages = Cepage_get_all();
 foreach($cepages as &$c)
 {
 	$c['nom'] = htmlspecialchars($c['nom']);
-	$c['description'] = htmlspecialchars($c['description']);
+	$c['description'] = nl2br(htmlspecialchars($c['description']));
 }
 
 $cepages_col_names = Array(

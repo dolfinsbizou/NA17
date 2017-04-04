@@ -8,7 +8,7 @@ $parcelles = Parcelle_get_all(isset($_GET['join']));
 foreach($parcelles as &$p) 
 {
 	if(isset($p['sol_desc']))
-		$p['sol_desc'] = htmlspecialchars($p['sol_desc']);
+		$p['sol_desc'] = nl2br(htmlspecialchars($p['sol_desc']));
 	$p['sol'] = htmlspecialchars($p['sol']);
 }
 
@@ -21,6 +21,8 @@ $parcelles_col_names = Array(
 );
 
 $parcelles_primary_key = Array('id');
+
+$parcelles_foreign_keys = Array('sol' => 'types-de-sol');
 
 $parcelles_prefix = "parcelles";
 

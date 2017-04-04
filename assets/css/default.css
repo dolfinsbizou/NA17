@@ -156,6 +156,7 @@ nav h2
 #main table .table-empty-cell
 {
 	font-style: italic;
+	color: #BBB;
 }
 
 #main table .table-actions-cell
@@ -191,6 +192,48 @@ nav h2
 	color: #FFDF00;
 	margin-right: 2px;
 	font-family: 'icon'; !important
+}
+
+#main table .table-foreign-key-symbol
+{
+	font-weight: normal;
+	color: #777777;
+	margin-right: 2px;
+	font-family: 'icon'; !important
+}
+
+#main label,  #main input
+{
+	display: inline-block;
+}
+
+#main label
+{
+	width: 100%;
+	margin-bottom: 0.2em;
+	font-weight: bold;
+}
+
+#main input
+{
+	width: 25%;
+	margin-bottom: 0.6em;
+	font-family: 'corps';
+}
+
+#main textarea
+{
+	width: 25%;
+	padding: 0.5em;
+	margin-bottom: 0.6em;
+	font-family: 'corps';
+	resize: none;
+}
+
+#main input[type="submit"]
+{
+	margin-top: 1em;
+	width: auto;
 }
 
 @font-face
