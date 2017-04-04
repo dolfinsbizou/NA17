@@ -53,8 +53,8 @@ function fancy_table($fetch, $col_names=null, $primary_key=null, $foreign_keys=n
 		{
 			if(!in_array($key, $col_ommitted))
 			{
-				echo '<td class="' . (empty($value)?' table-empty-cell':'') . (in_array($key, $primary_key)?'table-primary-key-cell':'') . '">';
-				echo empty($value)?$null_message:$value;
+				echo '<td class="' . (($value === null)?' table-empty-cell':'') . (in_array($key, $primary_key)?'table-primary-key-cell':'') . '">';
+				echo ($value === null)?$null_message:$value;
 				echo "</td>";
 			}
 		}
