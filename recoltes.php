@@ -8,9 +8,12 @@ $recoltes = Recolte_get_all(isset($_GET['join']));
 foreach($recoltes as &$r) 
 {
 	foreach($r as &$e)
+	{
 		$e = htmlspecialchars($e);
-	foreach(Array('desc_cult', 'desc_taille') as $e)
-		if(isset($r[$e])) nl2br($r[$e]);
+	}
+
+	if(isset($r['desc_cult'])) $r['desc_cult'] = nl2br($r['desc_cult']);
+	if(isset($r['desc_taille'])) $r['desc_taille'] = nl2br($r['desc_taille']);
 }
 
 $recoltes_col_names = Array(
