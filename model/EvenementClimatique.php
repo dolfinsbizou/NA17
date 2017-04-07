@@ -31,7 +31,7 @@ function EvenementClimatique_delete_entry($type, $date)
 
 	$err1 = $req1->errorInfo();
 	$err2 = $req2->errorInfo();
-	if(!empty($err1) && !empty($err2))
+	if(!empty($err1[2]) && !empty($err2[2]))
 		$err = Array(
 			$err1[0] . ', ' . $err2[0],
 			$err1[1] . ', ' . $err2[1],
@@ -40,4 +40,15 @@ function EvenementClimatique_delete_entry($type, $date)
 		$err = $err1;
 
 	return $err;
+}
+
+function EvenementClimatique_get_entry($type, $date)
+{
+	global $db;
+
+	$req = $db->prepare('SELECT type, ' . formatted_date("EvenementClimatique.date_evenement") . ' FROM EvenementClimatique WHERE type = ? AND date_evenement = ?');
+
+	$req->execute(array($type, $date));
+
+	return $req->fetch(PDO::FETCH_ASSOC);
 }

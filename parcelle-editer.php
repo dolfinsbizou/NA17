@@ -39,7 +39,7 @@ foreach($sols as &$sol)
 
 $fields = Array();
 $fields[0] = new FormField("Id", "Numéro de cadastre", "id", $parcelle['id'], "text", null, isset($_GET['id']), true);
-$fields[1] = new FormField("Sol", "Type de sol", "sol", $parcelle['sol'], "select", $sols);
+$fields[1] = new FormField("Sol", "", "sol", $parcelle['sol'], "select", $sols);
 $fields[2] = new FormField("Exposition", "faible (0), moyen (1), forte (2)", "exposition", $parcelle['exposition']);
 $fields[3] = new FormField("Superficie", "en m²", "superficie", $parcelle['superficie']);
 

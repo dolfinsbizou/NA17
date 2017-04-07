@@ -105,6 +105,12 @@ nav h2
 	font-family: 'code';
 }
 
+#main p
+{
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
 #main a
 {
 	color: #454545;
@@ -116,11 +122,34 @@ nav h2
 	color: #101010;
 }
 
+#main .dyn-fields
+{
+	list-style-type: none;
+}
+
+#main .dyn-fields li
+{
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
 #main .add-link
 {
 	color: #00C000;
 	text-decoration: none;
 	font-family: 'icon'; !important
+}
+
+#main .delete-link
+{
+	color: darkred;
+	text-decoration: none;
+	font-family: 'icon'; !important
+}
+
+#main .delete-link:hover
+{
+	color: #A00000;
 }
 
 #main .add-link:hover
