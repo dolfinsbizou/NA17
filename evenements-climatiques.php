@@ -26,7 +26,7 @@ foreach($evenements as $key => &$e)
 	$evenements[$key]['recoltes_touchees'] = '';
 
 	foreach($parcelles as $k => $p)
-		$evenements[$key]['recoltes_touchees'].= (empty($evenements[$key]['recoltes_touchees'])?'':', ') . '<a href="recolte.php?annee=' . $annees[$k] . '&id_parcelle=' . $p . '">N°' . $p . ' en ' . $annees[$k] . '</a>';
+		$evenements[$key]['recoltes_touchees'].= (empty($evenements[$key]['recoltes_touchees'])?'':', ') . 'N°' . $p . ' en ' . $annees[$k];
 }
 
 $evenements_primary_key = Array('type', 'date_evenement', 'dummy' => 'date_evenement_f');
