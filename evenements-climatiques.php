@@ -15,14 +15,27 @@ foreach($evenements as &$e)
 $evenements_col_names = Array(
 	'type' => 'Type',
 	'even_desc' => 'Description',
-	'date_evenement_f' => 'Date'
+	'date_evenement_f' => 'Date',
+	'recoltes_touchees' => 'Récoltes touchées'
 );
 
-$evenements_primary_key = Array('type', 'date_evenement_f');
+foreach($evenements as $key => &$e)
+{
+	$parcelles = explode(',', $e['id_parcelle_recoltes']);
+	$annees = explode(',', $e['annee_recoltes']);
+	$evenements[$key]['recoltes_touchees'] = '';
+
+	foreach($parcelles as $k => $p)
+		$evenements[$key]['recoltes_touchees'].= (empty($evenements[$key]['recoltes_touchees'])?'':', ') . '<a href="recolte.php?annee=' . $annees[$k] . '&id_parcelle=' . $p . '">N°' . $p . ' en ' . $annees[$k] . '</a>';
+}
+
+$evenements_primary_key = Array('type', 'date_evenement', 'dummy' => 'date_evenement_f');
 
 $evenements_foreign_keys = Array('type' => 'types.php#TypeEvenementClimatique');
 
 $evenements_prefix = "evenement-climatique";
+
+$evenements_col_ommitted = Array('date_evenement', 'id_parcelle_recoltes', 'annee_recoltes');
 
 $joinLink = '<a href="evenements-climatiques.php' . (isset($_GET['join'])?'':'?join') . '"> ' . (isset($_GET['join'])?'Sans':'Avec') . ' jointure' . (isset($_GET['join'])?'':'s') . '</a>';
 

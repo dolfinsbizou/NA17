@@ -62,8 +62,9 @@ function fancy_table($fetch, $col_names=null, $primary_key=null, $foreign_keys=n
 		if($actions)
 		{
 			$get_string = "?";
-			foreach($primary_key as $cell)
+			foreach($primary_key as $meta => $cell)
 			{
+				if($meta === "dummy") continue;
 				if(strlen($get_string) !== 1) $get_string.= '&';
 				$get_string.= $cell . '=' . rawurlencode(htmlspecialchars_decode($data[$cell]));
 			}
