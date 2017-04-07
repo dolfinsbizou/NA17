@@ -132,14 +132,19 @@ class FormField
 /*! \brief Displays a fancy form with a model.
  * 	\param $fields An array of FormFields.
  * 	\param $target Form target (the "action" attribute).
+ * 	\param $tiny If true, displays only fields.
  */
-function fancy_form($fields, $target)
+function fancy_form($fields, $target, $tiny=false)
 {
-	echo '<script src="assets/scripts/dynamic_fields_functions.js"></script>';
 	$load_dyn_fields = false;
 	$dyn_fields_iter = 0;
 	
-	echo '<form method="post" action="' . $target . '">';
+	if(!$tiny)
+	{
+		echo '<script src="assets/scripts/dynamic_fields_functions.js"></script>';
+		echo '<form method="post" action="' . $target . '">';
+	}
+
 	foreach($fields as &$field)
 	{
 		switch($field->f_type)
@@ -163,15 +168,19 @@ function fancy_form($fields, $target)
 			if(!is_array($field->f_extras)) $field->f_extras = Array();
 			if(!is_array($field->f_content)) $field->f_content = Array();
 			echo '<script>';
-			if(!$load_dyn_fields) echo 'var dyn_fields = new Array(); var dyn_fields_params = new Object(); var dyn_fields_params_keys = new Object(); var dyn_fields_contents = new Object();';
+			if(!$load_dyn_fields) echo 'var dyn_fields = new Array(); var dyn_fields_params = new Object(); var dyn_fields_params_keys = new Object(); var dyn_fields_contents = new Object(); var dyn_fields_extra = new Object();';
 
 			$load_dyn_fields = true;
 			
 			echo 'dyn_fields.push(\'' . $field->f_name . '\'); dyn_fields_params[\'' . $field->f_name . '\'] = new Array(); dyn_fields_params_keys[\'' . $field->f_name . '\'] = new Array(); dyn_fields_contents[\'' . $field->f_name . '\'] = new Array();</script>';
-			foreach($field->f_extras as $key => &$option)
+			foreach($field->f_extras[0] as $key => &$option)
 			{
 				echo '<script>dyn_fields_params[\'' . $field->f_name . '\'].push(\'' . $option . '\'); dyn_fields_params_keys[\'' . $field->f_name . '\'].push(\'' . $key . '\');</script>';
 			}
+			echo '<script>dyn_fields_extra[\'' . $field->f_name . '\'] = \'';
+			fancy_form(array_slice($field->f_extras, 1), null, true);
+			echo '\';</script>';
+
 			foreach($field->f_content as &$option)
 				echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'].push(\'' . $option . '\')</script>';
 	
@@ -187,9 +196,12 @@ function fancy_form($fields, $target)
 		}
 		echo '<br />';
 	}
-	echo '<input type="submit" value="Valider" />';
-	echo '</form>';
+	if(!$tiny)
+	{
+		echo '<input type="submit" value="Valider" />';
+		echo '</form>';
 
-	if($load_dyn_fields)
-		echo '<script src="assets/scripts/dynamic_fields.js"></script>';
+		if($load_dyn_fields)
+			echo '<script src="assets/scripts/dynamic_fields.js"></script>';
+	}
 }

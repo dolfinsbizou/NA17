@@ -20,14 +20,17 @@ var add_field = function(i, target, content) {
 			field_string+= dyn_fields_params[target][j];
 			field_string+= '</option>';
 		}
-		field_string+= '</li></select>';
+		field_string+= '</select>';
+		console.debug(dyn_fields_extra[target]);
+		field_string+= dyn_fields_extra[target].replace(/#/g, targetsCount[i]);
+		field_string+= '</li>';
 		targets[i].innerHTML+= field_string;
 		targetsCount[i]++;
 	}
 }
 
 var delete_field = function(i, target) {
-	if(targetsCount[i] > 0)
+	if(targetsCount[i] > 1)
 	{
 		var selected = document.getElementById(target.concat('_'.concat(targetsCount[i]-1))).parentElement.remove();
 		targetsCount[i]--;

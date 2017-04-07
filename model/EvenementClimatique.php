@@ -52,3 +52,44 @@ function EvenementClimatique_get_entry($type, $date)
 
 	return $req->fetch(PDO::FETCH_ASSOC);
 }
+
+function EvenementClimatique_add_entry($type, $date, $touche)
+{
+	global $db;
+
+	$req1 = $db->prepare('INSERT INTO EvenementClimatique(type, date_evenement) VALUES(?, ' . normalized_date('?') . ')');
+
+	$req1->execute(Array($type, $date));
+
+	if(!empty($req1->errorInfo()[2])) return $req1->errorInfo();
+
+	$reqString = 'INSERT INTO Touche(annee_recolte, id_parcelle_recolte, type_evenement, date_evenement, degats) VALUES';
+	
+	$first = true;
+	$i = 0;
+	foreach($touche as &$entry)
+	{
+		if(!$first) $reqString.= ',';
+		$first = false;
+		$reqString.= ' (:a' . $i . ', :i' . $i . ', :t, ' . normalized_date(':d') . ', :deg' . $i . ')';
+		$i++;
+	}
+
+	$req2 = $db->prepare($reqString);
+
+	$req2->bindParam('t', $type);
+	$req2->bindParam('d', $date);
+
+	$i = 0;
+	foreach($touche as &$entry)
+	{
+		$req2->bindParam('a' . $i, $entry['annee']);
+		$req2->bindParam('i' . $i, $entry['id_parcelle']);
+		$req2->bindParam('deg' . $i, $entry['degats']);
+		$i++;
+	}
+
+	$req2->execute();
+
+	return $req2->errorInfo();
+}

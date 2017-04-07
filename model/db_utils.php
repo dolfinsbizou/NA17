@@ -10,3 +10,8 @@ function formatted_date($field, $alias=null)
 
 	return 'to_char(' . $field . ', \'DD/MM/YYYY\') AS ' . $alias;
 }
+
+function normalized_date($field)
+{
+	return 'to_date(' . $field . ', \'DD/MM/YYYY\')';
+}

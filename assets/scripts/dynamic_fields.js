@@ -25,6 +25,7 @@ for(var i = 0 ; i < dyn_fields.length ; i++) {
 			targets.push(elem);
 			targetsCount.push(0);
 			targetsMax.push(dyn_fields_params[dyn_fields[i]].length);
+			add_field(i, dyn_fields[i], '');
 		}
 	}
 	
