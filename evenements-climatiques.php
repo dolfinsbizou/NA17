@@ -28,6 +28,8 @@ foreach($evenements as $key => &$e)
 
 	foreach($parcelles as $k => $p)
 		$evenements[$key]['recoltes_touchees'].= (empty($evenements[$key]['recoltes_touchees'])?'':', ') . 'N°' . $p . ' en ' . $annees[$k] . ' (' . $degats[$k] . ')';
+
+	$evenements[$key]['recoltes_touchees'] = htmlspecialchars($evenements[$key]['recoltes_touchees']);
 }
 
 $evenements_primary_key = Array('type', 'date_evenement', 'dummy' => 'date_evenement_f');

@@ -10,6 +10,7 @@
 		<li><a href="cepages.php">Cépages</a></li>
 		<li><a href="vins.php">Vins</a></li>
 		<li><a href="types.php">Types</a></li>
+		<li><a href="traitements-phytosanitaires.php">Traitements Phytosanitaires</a></li>
 		<li><a href="evenements-climatiques.php">Évènements climatiques</a></li>
 	</ul>
 </nav>
