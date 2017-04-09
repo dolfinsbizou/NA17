@@ -35,7 +35,7 @@ foreach($evenements as &$e)
 $fields = Array();
 $fields[0] = new FormField("Type", "", "type", null, "select", $evenements, isset($_GET['type']), true);
 $fields[1] = new FormField("Date", "JJ/MM/YYYY", "date_evenement", null, "text", null, isset($_GET['date_evenement']), true);
-$fields[2] = new FormField("Récolte(s) touchée(s)", "", "touche", null, "dynamic_fields", Array($recoltes_js, new FormField("Dégâts", "De 0 à 10", "touche_degats_#", null, "text", null, false, true)), false, true);
+$fields[2] = new FormField("Récolte(s) touchée(s)", "", "touche", null, "dynamic_fields", Array($recoltes_js, Array(true, 0), new FormField("Dégâts", "De 0 à 10", "touche_degats_#", null, "text", null, false, true)), false, true);
 
 $target = 'evenement-climatique-editer-valider.php' . ($evenement?'':'?add');
 

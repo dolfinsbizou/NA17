@@ -15,22 +15,37 @@ var add_field = function(i, target, content) {
 			field_string+= '<option value="';
 			field_string+= dyn_fields_params_keys[target][j];
 			field_string+='"';
-			if(content === dyn_fields_params[target][j]) field_string+=' selected';
+			if(content['dyn_field'] === dyn_fields_params_keys[target][j]) field_string+=' selected';
 			field_string+='>';
 			field_string+= dyn_fields_params[target][j];
 			field_string+= '</option>';
 		}
 		field_string+= '</select>';
-		console.debug(dyn_fields_extra[target]);
 		field_string+= dyn_fields_extra[target].replace(/#/g, targetsCount[i]);
-		field_string+= '</li>';
+				field_string+= '</li>';
 		targets[i].innerHTML+= field_string;
+		for(strName in content)
+		{
+			if(strName=='dyn_field') continue;
+			strValue = strName.replace(/#/g, targetsCount[i]);
+			node = document.getElementById(strValue);
+			switch(node.type)
+			{
+			case "textarea":
+				node.innerHTML == content[strName];
+				break;
+			default:
+				node.setAttribute('value', content[strName]);
+				break;
+			}
+		}
+
 		targetsCount[i]++;
 	}
 }
 
 var delete_field = function(i, target) {
-	if(targetsCount[i] > 1)
+	if(targetsCount[i] > (dyn_fields_options[target][0]?1:0))
 	{
 		var selected = document.getElementById(target.concat('_'.concat(targetsCount[i]-1))).parentElement.remove();
 		targetsCount[i]--;

@@ -10,3 +10,25 @@ function TraitementPhytosanitaire_get_all()
 
 	return $req->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function TraitementPhytosanitaire_get_entry($nom)
+{
+	global $db;
+
+	$req = $db->prepare('SELECT * FROM TraitementPhytosanitaire WHERE nom = ?');
+
+	$req->execute(array($nom));
+
+	return $req->fetch(PDO::FETCH_ASSOC);
+}
+
+function TraitementPhytosanitaire_get_applications($nom)
+{
+	global $db;
+
+	$req = $db->prepare('SELECT * FROM AppliqueA WHERE nom_traitement_phytosanitaire = ?');
+
+	$req->execute(array($nom));
+
+	return $req->fetchAll(PDO::FETCH_ASSOC);
+}

@@ -168,21 +168,40 @@ function fancy_form($fields, $target, $tiny=false)
 			if(!is_array($field->f_extras)) $field->f_extras = Array();
 			if(!is_array($field->f_content)) $field->f_content = Array();
 			echo '<script>';
-			if(!$load_dyn_fields) echo 'var dyn_fields = new Array(); var dyn_fields_params = new Object(); var dyn_fields_params_keys = new Object(); var dyn_fields_contents = new Object(); var dyn_fields_extra = new Object();';
+			if(!$load_dyn_fields) echo 'var dyn_fields = new Array(); var dyn_fields_params = new Object(); var dyn_fields_params_keys = new Object(); var dyn_fields_contents = new Object(); var dyn_fields_extra = new Object(); var dyn_fields_options = new Object();';
 
 			$load_dyn_fields = true;
 			
-			echo 'dyn_fields.push(\'' . $field->f_name . '\'); dyn_fields_params[\'' . $field->f_name . '\'] = new Array(); dyn_fields_params_keys[\'' . $field->f_name . '\'] = new Array(); dyn_fields_contents[\'' . $field->f_name . '\'] = new Array();</script>';
+			echo 'dyn_fields.push(\'' . $field->f_name . '\'); dyn_fields_params[\'' . $field->f_name . '\'] = new Array(); dyn_fields_params_keys[\'' . $field->f_name . '\'] = new Array(); dyn_fields_contents[\'' . $field->f_name . '\'] = new Array(); dyn_fields_options[\'' . $field->f_name . '\'] = new Array();</script>';
 			foreach($field->f_extras[0] as $key => &$option)
 			{
 				echo '<script>dyn_fields_params[\'' . $field->f_name . '\'].push(\'' . $option . '\'); dyn_fields_params_keys[\'' . $field->f_name . '\'].push(\'' . $key . '\');</script>';
 			}
+
+			foreach($field->f_extras[1] as &$option)
+			{
+				echo '<script>dyn_fields_options[\'' . $field->f_name . '\'].push(\'' . $option . '\');</script>';
+			}
 			echo '<script>dyn_fields_extra[\'' . $field->f_name . '\'] = \'';
-			fancy_form(array_slice($field->f_extras, 1), null, true);
+			fancy_form(array_slice($field->f_extras, 2), null, true);
 			echo '\';</script>';
 
-			foreach($field->f_content as &$option)
-				echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'].push(\'' . $option . '\')</script>';
+			echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'] = new Array();</script>';
+			$indexC = 0;
+			if(!empty($field->f_content)) echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'][0] = new Object();</script>';
+			foreach($field->f_content as $key => &$option)
+			{
+				if(is_array($option))
+				{
+					echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'][' . $indexC . '] = new Object();</script>';
+					foreach($option as $key2 => &$o)
+						echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'][' . $indexC . '][\'' . $key2 . '\'] = \'' . $o . '\';</script>';
+					$indexC++;
+				}
+				else
+					echo '<script>dyn_fields_contents[\'' . $field->f_name . '\'][' . $indexC . '][\'' . $key . '\'] = \'' . $option . '\';</script>';
+
+			}
 	
 			echo '<label>' . $field->f_label . '</label><br />';
 			echo '<ul class="dyn-fields ' . $field->f_name . '"></ul>';
