@@ -55,3 +55,13 @@ function Recolte_update_entry($annee, $id, $cep, $cul, $taille, $qte)
 	return $req->errorInfo();
 }
 
+function Recolte_delete_entry($annee, $id)
+{
+	global $db;
+
+	$req = $db->prepare('DELETE FROM Recolte WHERE annee = ? AND id_parcelle = ?');
+
+	$req->execute(array($annee, $id));
+
+	return $req->errorInfo();
+}

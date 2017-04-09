@@ -16,7 +16,7 @@ if(!empty($errorInfo[2]))
 {
 	$driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
 	$parcelle_key = htmlspecialchars($parcelle_key);
-	$page_title = 'La parcelle n°' . $parcelle_key . ' n\'a pas été supprimé';
+	$page_title = 'La parcelle n°' . $parcelle_key . ' n\'a pas été supprimée';
 	require_once("view/suppression-erreur.php");
 }
 else
