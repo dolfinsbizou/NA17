@@ -1,6 +1,7 @@
 targets = new Array();
 targetsCount = new Array();
 targetsMax = new Array();
+offsets = new Array();
 
 for(var i = 0 ; i < dyn_fields.length ; i++) {
 	var elements = document.getElementsByClassName(dyn_fields[i]);
@@ -23,8 +24,9 @@ for(var i = 0 ; i < dyn_fields.length ; i++) {
 		}
 		else if(elem.className === "dyn-fields ".concat(dyn_fields[i])) {
 			targets.push(elem);
-			targetsCount.push(-dyn_fields_options[dyn_fields[i]][1]);
-			targetsMax.push(dyn_fields_params[dyn_fields[i]].length-dyn_fields_options[dyn_fields[i]][1]);
+			targetsCount.push(0);
+			targetsMax.push(dyn_fields_params[dyn_fields[i]].length);
+			offsets.push(dyn_fields_options[dyn_fields[i]][1]);
 			if((dyn_fields_contents[dyn_fields[i]].length == 0) && dyn_fields_options[dyn_fields[i]][0]) add_field(i, dyn_fields[i], '');
 		}
 	}
