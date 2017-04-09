@@ -11,7 +11,7 @@ function EvenementClimatique_get_all($join=false)
 {
 	global $db;
 
-	$req = $db->query('SELECT EvenementClimatique.type,' . ($join?' TypeEvenementClimatique.description AS even_desc,':'') . ' ' . formatted_date("EvenementClimatique.date_evenement") .', EvenementClimatique.date_evenement, STRING_AGG(id_parcelle_recolte::text, \',\') AS id_parcelle_recoltes, STRING_AGG(annee_recolte::text, \',\') AS annee_recoltes FROM EvenementClimatique INNER JOIN touche ON evenementclimatique.type = touche.type_evenement AND evenementclimatique.date_evenement = touche.date_evenement' . ($join?' INNER JOIN TypeEvenementClimatique ON EvenementClimatique.type = TypeEvenementClimatique.nom':'') . ' GROUP BY EvenementClimatique.type, EvenementClimatique.date_evenement' . ($join?', TypeEvenementClimatique.description':'') . ' ORDER BY date_evenement');
+	$req = $db->query('SELECT EvenementClimatique.type,' . ($join?' TypeEvenementClimatique.description AS even_desc,':'') . ' ' . formatted_date("EvenementClimatique.date_evenement") .', EvenementClimatique.date_evenement, STRING_AGG(id_parcelle_recolte::text, \',\') AS id_parcelle_recoltes, STRING_AGG(annee_recolte::text, \',\') AS annee_recoltes, STRING_AGG(degats::text, \',\') AS degat_recoltes FROM EvenementClimatique INNER JOIN touche ON evenementclimatique.type = touche.type_evenement AND evenementclimatique.date_evenement = touche.date_evenement' . ($join?' INNER JOIN TypeEvenementClimatique ON EvenementClimatique.type = TypeEvenementClimatique.nom':'') . ' GROUP BY EvenementClimatique.type, EvenementClimatique.date_evenement' . ($join?', TypeEvenementClimatique.description':'') . ' ORDER BY date_evenement');
 
 	return $req->fetchAll(PDO::FETCH_ASSOC);
 }
