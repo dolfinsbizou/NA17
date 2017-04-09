@@ -16,7 +16,7 @@ $evenements_col_names = Array(
 	'type' => 'Type',
 	'even_desc' => 'Description',
 	'date_evenement_f' => 'Date',
-	'recoltes_touchees' => 'Récoltes touchées (dégats/10)'
+	'recoltes_touchees' => 'Parcelles touchées (dégats/10)'
 );
 
 foreach($evenements as $key => &$e)

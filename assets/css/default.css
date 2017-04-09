@@ -56,6 +56,12 @@ nav h2
 	margin-top: 15px;
 }
 
+#nav-list li ul
+{
+	list-style-type: square;
+	padding-left: 2em;
+}
+
 /* main */
 
 #main

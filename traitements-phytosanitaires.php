@@ -14,7 +14,7 @@ foreach($traitements as &$t)
 $traitements_col_names = Array(
 	'nom' => 'Nom',
 	'description' => 'Description',
-	'applications' => 'Applications (nombre de fois)'
+	'applications' => 'Parcelles traitées (nombre de fois)'
 );
 
 foreach($traitements as $key => &$t)
