@@ -129,5 +129,3 @@ function TraitementPhytosanitaire_delete_entry($nom)
 
 	return $err;
 }
-
-

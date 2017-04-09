@@ -107,3 +107,27 @@ function Vin_update_entry($appellation, $annee, $acidite, $robe, $petillant, $pr
 	}
 }
 
+function Vin_delete_entry($appellation, $annee)
+{
+	global $db;
+
+	$req1 = $db->prepare('DELETE FROM Constitue WHERE appellation_vin = ? AND annee_vin = ?');
+
+	$req1->execute(array($appellation, $annee));
+
+	$req2 = $db->prepare('DELETE FROM Vin WHERE appellation = ? AND annee = ?');
+
+	$req2->execute(array($appellation, $annee));
+
+	$err1 = $req1->errorInfo();
+	$err2 = $req2->errorInfo();
+	if(!empty($err1[2]) && !empty($err2[2]))
+		$err = Array(
+			$err1[0] . ', ' . $err2[0],
+			$err1[1] . ', ' . $err2[1],
+			$err1[2] . "\nAND\n" . $err2[2]);
+	else
+		$err = $err1;
+
+	return $err;
+}
