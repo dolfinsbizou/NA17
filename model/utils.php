@@ -157,10 +157,12 @@ function fancy_form($fields, $target, $tiny=false)
 
 			echo '<label for="' . $field->f_name . '">' . $field->f_label . '</label>';
 			echo '<select id="' . $field->f_name . '" name="' . $field->f_name . '"' . ($field->f_locked?' readonly':'') . '>';
-			foreach($field->f_extras as &$option)
+			$i = 0;
+			foreach($field->f_extras as $key => &$option)
 			{
 				if(!$field->f_locked || $option==$field->f_content)
-					echo '<option value="' . $option . '" ' . (($option==$field->f_content)?'selected':'') . '>' . $option . '</option>';
+					echo '<option value="' . (($key === $i)?$option:$key) . '" ' . (($option==$field->f_content)?'selected':'') . '>' . $option . '</option>';
+				$i++;
 			}
 			echo '</select>';
 			break;
