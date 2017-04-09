@@ -1,6 +1,5 @@
 var add_field = function(i, target, content) {
-	console.debug(content);
-	if(targetsCount[i]-offsets[i] < targetsMax[i]) {
+	if(targetsCount[i] < targetsMax[i]) {
 		var field_string = '<li><select id="';
 		field_string+= target;
 		field_string+= '_';

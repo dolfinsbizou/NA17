@@ -94,7 +94,7 @@ function TraitementPhytosanitaire_update_entry($nom, $desc, $applique_a)
 			'n' => $nom
 		));
 		if(!empty($req->errorInfo()[2])) return $req->errorInfo();
-		$req = $db->prepare('INSERT INTO AppliqueA(annee_recolte, id_parcelle_recolte, nom_traitement_phytosanitaire, nb_applications) SELECT :a, :i, :n::text, :nb WHERE NOT EXISTS (SELECT 1 FROM AppliqueA WHERE id_parcelle_recolte = :i AND nom_traitement_phytosanitaire = :n)');
+		$req = $db->prepare('INSERT INTO AppliqueA(annee_recolte, id_parcelle_recolte, nom_traitement_phytosanitaire, nb_applications) SELECT :a, :i, :n::text, :nb WHERE NOT EXISTS (SELECT 1 FROM AppliqueA WHERE annee_recolte = :a AND id_parcelle_recolte = :i AND nom_traitement_phytosanitaire = :n)');
 		$req->execute(Array(
 			'nb' => $entry['nb_applications'],
 			'a' => $entry['annee'], 
