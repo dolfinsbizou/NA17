@@ -62,13 +62,13 @@ Développement d’une application fonctionnelle répondant aux besoins du clien
 
 ### Produit du projet
 
-Deux produits sont attendus: 
+Deux produits sont attendus:
 
    * Rédaction d’un rapport d’analyse du projet. 
        * Le dossier doit contenir : 
        * Le MCD (modèle conceptuel de données) respectant le cahier des charges 
        * Le MLD (modèle logique de données) basé sur le MCD réalisé. 
-       * Le Product Backlog du projet, décrivant les tâches à réaliser pour implémenter les fonctionnalités demandées 
+       * Le Product Backlog du projet, décrivant les tâches à réaliser pour implémenter les fonctionnalités demandées
    * Réalisation du projet : 
        * Implémentation dans un SGBDR. 
        * Développement d’un site de démonstration.
@@ -109,7 +109,7 @@ Une seconde version de l'application est à rendre pour le 5 avril
 
 #### Techniques
 Le projet sera implémenté selon une architecture LAPP. 
-La livraison du projet doit être réalisée sur les serveurs de l'UV.  
+La livraison du projet doit être réalisée sur les serveurs de l'UV.
 
 ### Cahier des charges du client enrichi
 
@@ -227,7 +227,7 @@ Il faudra s’assurer de gérer les productions par année.
        * Traitement phytosanitaire
    * Fonctionnalités : 
        * Gestion des parcelles
-       * Gestion des cépages        
+       * Gestion des cépages
        * Gestion des récoltes
        * Gestion des vins
        * Notation d'un vin / caractéristique / qualité
